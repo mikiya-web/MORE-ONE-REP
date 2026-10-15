@@ -1750,3 +1750,33 @@ main {
     line-height: 1.6;
     text-align: center;
 }
+
+/* 操作時のフォーカス表示 */
+a:focus-visible,
+button:focus-visible,
+[role="button"]:focus-visible {
+    outline: 3px solid #C8A24C;
+    outline-offset: 4px;
+}
+
+/* 小さい画面でもモーダル内を確認できるようにする */
+.dummy-modal__content {
+    max-height: 90svh;
+    overflow-y: auto;
+}
+
+/* 端末の「動きを減らす」設定に対応 */
+@media (prefers-reduced-motion: reduce) {
+    .hero__campaign-title::before {
+        animation: none;
+    }
+
+    .facility__slider-track,
+    .faq__answer,
+    .faq__icon::after,
+    .header__burger,
+    .header__burger span,
+    .header__nav {
+        transition: none;
+    }
+}
